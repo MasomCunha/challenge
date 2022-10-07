@@ -3,7 +3,7 @@ import PublicRoutes from "./PublicRoutes";
 
 export default function routes() {
 
-    const isAuth: boolean = true;
+    const isAuth: boolean = false;
 
     return (
         isAuth ? <PrivateRoutes /> : <PublicRoutes />
