@@ -1,12 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Input from "../components/input";
 import Button from "../components/button";
-import { isEmailValid } from "../utils/validations"
+import { isEmailValid } from "../utils/validations";
+import { saveLocalStorage } from "../utils/genericFunctions";
+import { LOCAL_STORAGE_EMAIL } from "../utils/contants";
 
-export default function Login(){
+export default function Login() {
 
     const [userEmail, setUserEmail] = useState<string>("");
     const [hasErrorEmail, setHasErrorEmail] = useState<boolean>(false);
+
+    useEffect(() => {
+        let email : string | null = localStorage.getItem(LOCAL_STORAGE_EMAIL);
+
+        if (email !== null) {
+            setUserEmail(email)
+        }
+
+    }, [])
 
     const handleChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
         setUserEmail(e.target.value)
@@ -14,26 +25,27 @@ export default function Login(){
 
     const handleClick = () => {
 
-        if(isEmailValid(userEmail)){
+        if (isEmailValid(userEmail)) {
             setHasErrorEmail(false)
-        }else{
+            saveLocalStorage(LOCAL_STORAGE_EMAIL, userEmail)
+        } else {
             setHasErrorEmail(true)
         }
 
     }
 
 
-    return(
+    return (
         <div>
-            <Input 
-                className="inputLogin" 
-                placeholder="insert email" 
+            <Input
+                className="inputLogin"
+                placeholder="insert email"
                 hasError={hasErrorEmail}
                 errorMessage="Invalid email"
-                value={userEmail} 
+                value={userEmail}
                 onChange={handleChangeEmail}
-                />
-            <Button className="buttonSubmitLogin" title="Submit" handleClick={handleClick}/>
+            />
+            <Button className="buttonSubmitLogin" title="Submit" handleClick={handleClick} />
         </div>
     )
 }
