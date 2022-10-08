@@ -1,12 +1,13 @@
 import PrivateRoutes from "./PrivateRoutes";
 import PublicRoutes from "./PublicRoutes";
+import { useAppSelector } from "../hooks/useAppSelector";
 
-export default function routes() {
+export default function Routes() {
 
-    const isAuth: boolean = false;
+    const isLogged = useAppSelector((state) => state.auth.isLogged)
 
     return (
-        isAuth ? <PrivateRoutes /> : <PublicRoutes />
+        isLogged ? <PrivateRoutes /> : <PublicRoutes />
     )
 
 }
