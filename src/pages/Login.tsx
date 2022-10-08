@@ -6,10 +6,12 @@ import { saveLocalStorage } from "../utils/genericFunctions";
 import { LOCAL_STORAGE_EMAIL } from "../utils/contants";
 import { useAppDispatch } from "../hooks/useAppDispatch";
 import { login } from "../redux/actions/authAction";
+import { useNavigate  } from "react-router-dom";
 
 export default function Login() {
 
     const dispatch = useAppDispatch()
+    const navigate = useNavigate ()
 
     const [userEmail, setUserEmail] = useState<string>("");
     const [hasErrorEmail, setHasErrorEmail] = useState<boolean>(false);
@@ -33,6 +35,7 @@ export default function Login() {
             setHasErrorEmail(false);
             saveLocalStorage(LOCAL_STORAGE_EMAIL, userEmail);
             dispatch(login(userEmail))
+            navigate("/home")
         } else {
             setHasErrorEmail(true)
         }
