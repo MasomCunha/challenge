@@ -1,4 +1,4 @@
-import { GET_POSTS_LIST } from "../types";
+import { GET_POSTS_LIST, SUCESS_POST } from "../types";
 import * as interfacePostRedux from "../../interface/postReducerInterface"
 
 const initialState : interfacePostRedux.post = {
@@ -11,6 +11,12 @@ const authReducer = (state = initialState, action: interfacePostRedux.postReques
             return {
                 ...state,
                 postList: action.payload
+            }
+        }
+        case SUCESS_POST: {
+            return {
+                ...state,
+                postList: [...state.postList, action.payload]
             }
         }
         default: {

@@ -47,7 +47,7 @@ export default function Login() {
         <div>
             <Input
                 className="inputLogin"
-                placeholder="insert email"
+                placeholder="Insert email"
                 hasError={hasErrorEmail}
                 errorMessage="Invalid email"
                 value={userEmail}

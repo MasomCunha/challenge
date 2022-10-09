@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import PostCards from "../components/postcards";
+import PostForm from "../components/postFoms";
 import PostInterface from "../interface/postInterface";
 import { useAppDispatch } from "../hooks/useAppDispatch";
 import { useAppSelector } from "../hooks/useAppSelector";
-import { getPosts } from "../redux/actions/postAction";
+import { getPosts, addPosts } from "../redux/actions/postAction";
 
 
 export default function Home() {
@@ -22,8 +23,24 @@ export default function Home() {
         }
     }, [userId])
 
+    const handleSubmitForm = (title : string, body : string) => {
+
+        let postObj = {
+            id: postList[postList.length - 1].id + 1,
+            title: title,
+            body: body,
+            userId: userId
+        }
+
+     dispatch(addPosts(postObj))
+
+       
+
+    }
+
     return (
         <>
+            <PostForm handleSubmitForm={handleSubmitForm}/>
             {postList.length > 0 &&
                 <div>
                     <h1>Posts List</h1>

@@ -7,7 +7,7 @@ export default function Button({className, title, handleClick}: ButtonInterface)
             className={className}
             type="submit"
             title={title}
-            onClick={handleClick}
+            onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => handleClick(e)}
         />
     )
 }
