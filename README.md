@@ -15,6 +15,7 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
+        <li><a href="#folder-structure">Folder Structure</a></li>
       </ul>
     </li>
     <li>
@@ -52,6 +53,18 @@ Since I have no experience writing tests, I did not perform any in this project.
 * HTML
 * CSS
 
+
+### Folder Structure
+
+|-- src
+    |-- components
+    |-- hooks
+    |-- interface
+    |-- pages
+    |-- redux
+    |-- routes
+    |-- style
+    |-- utils
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
