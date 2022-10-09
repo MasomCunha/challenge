@@ -1,6 +1,6 @@
 import React from "react";
 import InputInterface from "../../interface/inputInterface";
-import "./input.css";
+import "../../style/input.css";
 
 export default function Input({ className, placeholder, hasError, errorMessage, value, onChange } : InputInterface){
     return(

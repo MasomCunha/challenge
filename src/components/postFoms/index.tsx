@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import PostFormsInterface from "../../interface/postFormsInterface";
 import Input from "../input";
 import Button from "../button";
+import "../../style/postForm.css";
 
-export default function PostForm({ handleSubmitForm } : PostFormsInterface) {
+export default function PostForm({ handleSubmitForm }: PostFormsInterface) {
 
     const [postTitle, setPostTitle] = useState<string>("");
     const [postBody, setPostBody] = useState<string>("");
@@ -22,23 +23,27 @@ export default function PostForm({ handleSubmitForm } : PostFormsInterface) {
     }
 
     return (
-        <div>
-            <Input className="inputTitleForm"
-                placeholder="Insert title"
-                hasError={false}
-                value={postTitle}
-                errorMessage={""}
-                onChange={handleChangePostTitle}
-            />
-            <Input className="inpuBodyForm"
-                placeholder="Insert Body"
-                hasError={false}
-                value={postBody}
-                errorMessage={""}
-                onChange={handleChangePostBody}
+        <div className="postFormWrapper">
+            <div className="inputTitle">
+                <Input className="inputTitleForm"
+                    placeholder="Insert title"
+                    hasError={false}
+                    value={postTitle}
+                    errorMessage={""}
+                    onChange={handleChangePostTitle}
+                />
+            </div>
+            <div className="inputBody">
+                <Input className="inpuBodyForm"
+                    placeholder="Insert Body"
+                    hasError={false}
+                    value={postBody}
+                    errorMessage={""}
+                    onChange={handleChangePostBody}
 
-            />
-            <Button className="buttonSubmitLogin" title="Submit" handleClick={() => handleClick()} />
+                />
+            </div>
+            <Button className="buttonSubmitLogin" title="Post" handleClick={() => handleClick()} />
         </div>
     )
 }

@@ -1,13 +1,13 @@
 import React from "react";
 import PostCardInterface from "../../interface/postCardinterface";
+import "../../style/postCard.css";
 
 
-export default function Input({ post } : PostCardInterface){
+export default function PostCards({ post } : PostCardInterface){
     return(
-       <div>
-            <div>id: {post.id}</div>
-            <div>title: {post.title}</div>
-            <div>body: {post.body}</div>
+       <div className="postCardContainer">
+            <div className="postTitle">{post.id} - {post.title}</div>
+            <div className="postBody">{post.body}</div>
        </div>
     )
 }
