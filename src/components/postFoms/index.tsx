@@ -20,6 +20,10 @@ export default function PostForm({ handleSubmitForm }: PostFormsInterface) {
 
     const handleClick = () => {
         handleSubmitForm(postTitle, postBody)
+
+        /**Next step: depending if post return 200 reset fields*/
+        setPostTitle("")
+        setPostBody("")
     }
 
     return (

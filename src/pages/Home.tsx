@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import PostCards from "../components/postcards";
 import PostForm from "../components/postFoms";
+import SuccessNotification from "../components/sucessNotification";
 import PostInterface from "../interface/postInterface";
 import { useAppDispatch } from "../hooks/useAppDispatch";
 import { useAppSelector } from "../hooks/useAppSelector";
@@ -14,6 +15,8 @@ export default function Home() {
     const userId: number | null = useAppSelector((state) => state.auth.userId);
     const postList: PostInterface[] = useAppSelector((state) => state.post.postList);
 
+    const [successNotification, setSuccessNotification] = useState<boolean>(false);
+
     const fetchPosts = (userID: number) => {
         dispatch(getPosts(userID))
     }
@@ -24,7 +27,16 @@ export default function Home() {
         }
     }, [userId])
 
-    const handleSubmitForm = (title: string, body: string) => {
+    useEffect(() => {
+        if(successNotification === true){
+            const timer = setTimeout(() => {
+                setSuccessNotification(false)
+              }, 5000);
+              return () => clearTimeout(timer);
+        }
+    }, [successNotification]) 
+
+    const handleSubmitForm = (title: string, body: string ) => {
 
         let postObj = {
             id: postList[postList.length - 1].id + 1,
@@ -34,8 +46,7 @@ export default function Home() {
         }
 
         dispatch(addPosts(postObj))
-
-
+        setSuccessNotification(true)
 
     }
 
@@ -44,7 +55,7 @@ export default function Home() {
             <div className="postFormContainer">
                 <h1>Insert new post</h1>
                 <div className="postFormContainerInputs">
-                <PostForm handleSubmitForm={handleSubmitForm} />
+                    <PostForm handleSubmitForm={handleSubmitForm} />
                 </div>
             </div>
             {postList.length > 0 &&
@@ -52,6 +63,9 @@ export default function Home() {
                     <h1>Posts List</h1>
                     {postList.map((post, index) => <PostCards key={index} post={post} />)}
                 </div>
+            }
+            {
+                successNotification && <SuccessNotification />
             }
         </div>
     )
