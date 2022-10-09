@@ -1,0 +1,49 @@
+.loginPage {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(10,0,36,1) 0%, rgba(179,27,193,1) 81%, rgba(0,212,255,1) 98%);
+}
+
+.loginPage .loginCardTitle {
+    height: 3vh;
+}
+
+
+.loginPage .loginCard {
+    width: 30vw;
+    height: 30vh;
+    background-color: rgb(248, 248, 252);
+    border-radius: 10px;
+    box-shadow: 2px 2px rgb(177, 175, 187);
+}
+
+.loginPage .inputContainer {
+    width: 30vw;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginPage .inputLogin {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    background-color: rgb(248, 248, 252);
+    border-bottom: 1px solid rgb(177, 175, 187);
+    height: 20px;
+    width: 100%;
+}
+
+.loginPage .buttonSubmitLogin {
+    cursor: pointer;
+    width: 30%;
+    padding: 2px 0;
+    margin: 10px;
+    border: 1px solid rgb(177, 175, 187);
+    border-radius: 10px;
+}
