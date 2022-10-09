@@ -85,7 +85,7 @@ To verify your versions just open cmd and run node -v to node version and npm -v
 1. Download the project to your computer
 2. Inside the project folder open the terminal and run npm install
 3. After installation completed run npm start inside the terminal
-4. Once the application is running, access the port that appears in the terminal (example: http://localhost:3000/)
+4. Once the application is running, access http://localhost:3000/
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
