@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Input from "../components/input";
 import Button from "../components/button";
+//import { useAuth0 } from "@auth0/auth0-react";
 import { isEmailValid } from "../utils/validations";
 import { saveLocalStorage } from "../utils/genericFunctions";
 import { LOCAL_STORAGE_EMAIL } from "../utils/contants";
@@ -11,6 +12,7 @@ import "../style/login.css"
 
 export default function Login() {
 
+   // const { loginWithRedirect, user, isAuthenticated, isLoading } = useAuth0();
     const dispatch = useAppDispatch()
     const navigate = useNavigate()
 
@@ -26,6 +28,7 @@ export default function Login() {
 
     }, [])
 
+
     const handleChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
         setUserEmail(e.target.value)
     }
@@ -33,10 +36,11 @@ export default function Login() {
     const handleClick = () => {
 
         if (isEmailValid(userEmail)) {
+           // loginWithRedirect()
             setHasErrorEmail(false);
             saveLocalStorage(LOCAL_STORAGE_EMAIL, userEmail);
             dispatch(login(userEmail))
-            navigate("/home")
+            navigate("/home") 
         } else {
             setHasErrorEmail(true)
         }
