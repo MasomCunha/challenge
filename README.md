@@ -56,15 +56,15 @@ Since I have no experience writing tests, I did not perform any in this project.
 
 ### Folder Structure
 
-|-- src
-    |-- components
-    |-- hooks
-    |-- interface
-    |-- pages
-    |-- redux
-    |-- routes
-    |-- style
-    |-- utils
+<p>|-- src</p>
+    <p>|-- components</p>
+    <p>|-- hooks</p>
+    <p>|-- interface</p>
+    <p>|-- pages</p>
+    <p>|-- redux</p>
+    <p>|-- routes</p>
+    <p>|-- style</p>
+    <p>|-- utils</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
