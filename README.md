@@ -33,24 +33,24 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+The goal of this challenge was to build a responsive web application that uses fake API to simulate sending and receiving posts for a given user. Auth0 should have been used to control accessible/visible routes.
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
+Based on Auth0 documentation to SPA https://auth0.com/docs/quickstart/spa/react/01-login#configure-auth0, i should get user information after the login successfully in Auth0. However, after redirect to my application, the user's information was undefined and this did not allow me to conclude the two first tasks.
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
+Since I don't have much experience with typeScript, when analyzing the code you will find in the postAction file, a type of return any, which was used to overcome the problem documented in the code.
 
-Use the `BLANK_README.md` to get started.
+Since I have no experience writing tests, I did not perform any in this project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ### Built With
 
-* [![React][React.js]][React-url]
-
+* ReactJs
+* TypeScript
+* Redux
+* HTML
+* CSS
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
