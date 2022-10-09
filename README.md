@@ -77,7 +77,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### Prerequisites
 
-To run this application you need to have npm;
+To run this application you need to have node v16.15.1 and npm v6.14.8.
+To verify your versions just open cmd and run node -v to node version and npm -v to npm version
 
 ### Installation
 
