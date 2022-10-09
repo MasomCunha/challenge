@@ -12,7 +12,7 @@ export default function PrivateRoutes() {
             <Route path="/home" element={<Home />} />
             <Route
                 path="*"
-                element={<Navigate to="/login" replace />}
+                element={<Navigate to="/home" replace />}
             />
         </Routes>
     )

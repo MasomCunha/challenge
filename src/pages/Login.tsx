@@ -6,7 +6,7 @@ import { saveLocalStorage } from "../utils/genericFunctions";
 import { LOCAL_STORAGE_EMAIL } from "../utils/contants";
 import { useAppDispatch } from "../hooks/useAppDispatch";
 import { login } from "../redux/actions/authAction";
-import { useNavigate  } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
 
