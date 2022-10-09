@@ -2,7 +2,8 @@ import { LOGIN_USER } from "../types";
 import * as interfaceAuthRedux from "../../interface/authReducerInterface"
 
 const initialState : interfaceAuthRedux.auth = {
-    isLogged: false
+    isLogged: false,
+    userId: null
 }
 
 
@@ -11,7 +12,8 @@ const authReducer = (state = initialState, action: interfaceAuthRedux.authReques
         case LOGIN_USER: {
             return {
                 ...state,
-                isLogged: true
+                isLogged: action.payload.isLogged,
+                userId: action.payload.userId
             }
         }
         default: {
