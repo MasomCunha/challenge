@@ -7,17 +7,18 @@ import { LOCAL_STORAGE_EMAIL } from "../utils/contants";
 import { useAppDispatch } from "../hooks/useAppDispatch";
 import { login } from "../redux/actions/authAction";
 import { useNavigate } from "react-router-dom";
+import "../style/login.css"
 
 export default function Login() {
 
     const dispatch = useAppDispatch()
-    const navigate = useNavigate ()
+    const navigate = useNavigate()
 
     const [userEmail, setUserEmail] = useState<string>("");
     const [hasErrorEmail, setHasErrorEmail] = useState<boolean>(false);
 
     useEffect(() => {
-        let email : string | null = localStorage.getItem(LOCAL_STORAGE_EMAIL);
+        let email: string | null = localStorage.getItem(LOCAL_STORAGE_EMAIL);
 
         if (email !== null) {
             setUserEmail(email)
@@ -44,16 +45,21 @@ export default function Login() {
 
 
     return (
-        <div>
-            <Input
-                className="inputLogin"
-                placeholder="Insert email"
-                hasError={hasErrorEmail}
-                errorMessage="Invalid email"
-                value={userEmail}
-                onChange={handleChangeEmail}
-            />
-            <Button className="buttonSubmitLogin" title="Submit" handleClick={handleClick} />
+        <div className="loginPage">
+            <div className="loginCard">
+                <h1 className="loginCardTitle">Login</h1>
+                <div className="inputContainer">
+                <Input
+                    className="inputLogin"
+                    placeholder="Insert email"
+                    hasError={hasErrorEmail}
+                    errorMessage="Invalid email"
+                    value={userEmail}
+                    onChange={handleChangeEmail}
+                />
+                <Button className="buttonSubmitLogin" title="Submit" handleClick={handleClick} />
+                </div>
+            </div>
         </div>
     )
 }

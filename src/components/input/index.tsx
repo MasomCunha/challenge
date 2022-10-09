@@ -1,9 +1,10 @@
 import React from "react";
 import InputInterface from "../../interface/inputInterface";
+import "./input.css";
 
 export default function Input({ className, placeholder, hasError, errorMessage, value, onChange } : InputInterface){
     return(
-        <>
+        <div className="inputWrapper">
         <input 
             className={className}
             type="input"
@@ -11,7 +12,7 @@ export default function Input({ className, placeholder, hasError, errorMessage, 
             onChange={onChange}
             value={value}
             />
-        { hasError && <p>{errorMessage}</p> }
-        </>
+        { hasError && <p className="errorMessageInput">{errorMessage}</p> }
+        </div>
     )
 }
